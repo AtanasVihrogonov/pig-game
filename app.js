@@ -16,23 +16,24 @@ document.querySelector('.btn-roll').addEventListener('click', rollDice);
 document.querySelector('.btn-hold').addEventListener('click', holdDice);
 document.querySelector('.btn-new').addEventListener('click', init);
 
-
 function rollDice() {
-  // Get a random number
-  let dice = Math.floor(Math.random() * 6) + 1;
-  // Display the result
-  let diceDom = document.querySelector('.dice');
+  if(gamePlaying) {
+    // Get a random number
+    let dice = Math.floor(Math.random() * 6) + 1;
+    // Display the result
+    let diceDom = document.querySelector('.dice');
 
-  diceDom.style.display = 'block';
-  diceDom.src = 'dice-' + dice + '.png';
-  // Update the round score If rolled number was NOT a 1
-  if(dice !== 1) {
-    // Add score
-    roundScore += dice;
-    document.querySelector('#current-' + activePlayer).textContent = roundScore;
-  } else {
-    // Next player
-    nextPlayer();
+    diceDom.style.display = 'block';
+    diceDom.src = 'dice-' + dice + '.png';
+    // Update the round score If rolled number was NOT a 1
+    if(dice !== 1) {
+      // Add score
+      roundScore += dice;
+      document.querySelector('#current-' + activePlayer).textContent = roundScore;
+    } else {
+      // Next player
+      nextPlayer();
+    }
   }
 }
 
@@ -50,19 +51,23 @@ function nextPlayer() {
 }
 
 function holdDice() {
-  // Add current score to GLOBAL score
-  scores[activePlayer] += roundScore;
-  // Update UI
-  document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-  // Check if player won the game
-  if(scores[activePlayer] >= 20) {
-    document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
-    document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-    document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-    document.querySelector('.dice').style.display = 'none';
-  } else {
-    // Next player
-    nextPlayer();
+  if(gamePlaying) {
+    // Add current score to GLOBAL score
+    scores[activePlayer] += roundScore;
+    // Update UI
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+    // Check if player won the game
+    if(scores[activePlayer] >= 100) {
+      document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+      document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+      document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+      document.querySelector('.dice').style.display = 'none';
+
+      gamePlaying = false;
+    } else {
+      // Next player
+      nextPlayer();
+    }
   }
 }
 
