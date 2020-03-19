@@ -1,7 +1,7 @@
 # Creating a simple cool game.
 
 ## Screenshot
-![GP](https://user-images.githubusercontent.com/45083295/77065206-c3f9c580-69d8-11ea-947b-d2d65cba5400.PNG)
+![PG-upd](https://user-images.githubusercontent.com/45083295/77110963-5a9ca580-6a1e-11ea-9fbc-87f0a896b33e.PNG)
 
 ## Tehnologies
 
