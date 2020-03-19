@@ -36,7 +36,7 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(ryan-quintal-W4JT4MOhbRw-unsplash.jpg);
+  background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
   background-size: cover;
   background-position: center;
   font-family: Lato;
@@ -65,8 +65,6 @@ body {
   padding: 100px;
 }
 
-
-
 /**********************************************
 *** PLAYERS
 **********************************************/
@@ -86,7 +84,7 @@ body {
   text-align: center;
   font-size: 80px;
   font-weight: 100;
-  color: #EB4D4D;
+  color:#cb3d75;
   margin-bottom: 130px;
 }
 
@@ -97,14 +95,13 @@ body {
   content: "\2022";
   font-size: 47px;
   position: absolute;
-  color: #EB4D4D;
+  color: #cb3d75;
   top: -7px;
   right: 10px;
-  
 }
 
 .player-current-box {
-  background-color: #EB4D4D;
+  background-color:#cb3d75;
   color: #fff;
   width: 40%;
   margin: 0 auto;
@@ -119,9 +116,7 @@ body {
   color: #222;
 }
 
-.player-current-score {
-  font-size: 30px;
-}
+.player-current-score { font-size: 30px; }
 
 button {
   position: absolute;
@@ -136,7 +131,6 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 300;
-  /* transition: background-color 0.3s, color 0.3s; */
 }
 
 button:hover { font-weight: 600; }
@@ -147,14 +141,13 @@ button:focus {
 }
 
 i {
-  color: #EB4D4D;
+  color: #cb3d75;
   display: inline-block;
   margin-right: 15px;
   font-size: 32px;
   line-height: 1;
   vertical-align: text-top;
   margin-top: -4px;
-  /* transition: margin 0.3s; */
 }
 
 .btn-new { top: 45px;}
@@ -171,4 +164,4 @@ i {
 }
 
 .winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+.winner .player-name { font-weight: 300; color: rgb(53, 241, 53); }
